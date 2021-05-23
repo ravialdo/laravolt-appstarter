@@ -4,30 +4,23 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Validation\Rules\Password;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Hash;
 use Auth;
 
 class Register extends Controller
 {
-	public function register(Request $request)
+	public function index()
 	{
-		$request->validate([
-			'first_name' => 'required',
-			'last_name' => 'required',
-			'username' => 'required|alpha_dash|unique:users',
-			'email' => 'required|unique:users',
-			'password' => ['required', Password::min(8)->letters()
-				->mixedCase()->numbers()->symbols()
-			],
-			'confirm_password' => 'required',
-			'terms' => 'required'
-		]);
-		
+		return view('auth.sign-up');
+	}
+
+	public function register(RegisterRequest $request)
+	{
 		User::create([
-			'first_name' => $request->first_name,
-			'last_name' => $request->last_name,
+			'nama_depan' => $request->first_name,
+			'nama_belakang' => $request->last_name,
 			'email' => $request->email,
 			'username' => $request->username,
 			'password' => Hash::make($request->password),
@@ -40,15 +33,10 @@ class Register extends Controller
 		];
 		
 		if(Auth::attempt($credentials)){
-			return view('message');
+			return redirect()->route('dashboard.index');
 		}
 		
 		return redirect()->back();
 			
-	}
-	
-    public function index()
-	{
-		return view('auth.sign-up');
 	}
 }

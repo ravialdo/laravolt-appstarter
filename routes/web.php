@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Admin;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +31,9 @@ Route::post('sign-up/process', [Auth\Register::class, 'register'])->name('regist
 Route::get('logout', [Auth\Logout::class, 'logout'])->name('app.logout');
 
 Route::middleware(['auth'])->group(function (){
-	Route::get('dashboard', [Dashboard\Index::class, 'index'])->name('dashboard.index');
+	Route::prefix('dashboard')->group(function (){
+		Route::get('/', [Dashboard\Index::class, 'index'])->name('dashboard.index');
+		Route::resource('/akun-pengguna', Admin\AkunPenggunaController::class);
+	});
+	
 });

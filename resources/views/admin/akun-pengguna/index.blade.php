@@ -19,7 +19,7 @@
 <html lang="en">
 
 <head> 
-    <x-partials.header title="Index - Dashboard"/>
+    <x-partials.header title="Akun Pengguna - Dashboard"/>
 </head>
 
 <body>
@@ -31,16 +31,15 @@
         <main class="content">
 
            <x-partials.dashboard.topbar />
-
-		<x-breadcrumbs.breadcrumb breadcrumb="primary">
-			<x-breadcrumbs.breadcrumb-item-active text="Dashboard" />
+		
+		 <x-breadcrumbs.breadcrumb breadcrumb="primary">
+			<x-breadcrumbs.breadcrumb-item route="{{ route('dashboard.index') }}" text="Dashboard" />
+			<x-breadcrumbs.breadcrumb-item-active text="Akun Pengguna" />
 		</x-breadcrumbs.breadcrumb>
 		
-		<!-- konten -->
-		
-			<div class="display-3 py-4">Hello, World</div>
+		<!-- Content -->
 			
-		<!-- akhir konten -->
+		<!-- End of Content -->
 		
 		<x-partials.dashboard.footer />
 		

@@ -10,6 +10,11 @@ use Auth;
 
 class Login extends Controller
 {
+	public function index()
+	{
+		return view('auth.sign-in');
+	}
+	
 	public function login(LoginRequest $request)
 	{
 		$credentials = [
@@ -22,11 +27,7 @@ class Login extends Controller
 			return redirect()->route('dashboard.index');
 		}
 		
+		toast('Gagal masuk, silahkan periksa terlebih dahulu akun anda.', 'error');
 		return redirect()->back();
-	}
-	
-    public function index()
-	{
-		return view('auth.sign-in');
 	}
 }

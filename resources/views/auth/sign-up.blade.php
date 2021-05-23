@@ -19,7 +19,7 @@
 <html lang="en">
 
 <head> 
-    <x-partials._head title="Sign-up"/>
+    <x-partials.header title="Sign-up"/>
 </head>
 
 <body>
@@ -29,12 +29,12 @@
         <!-- Section -->
         <section class="d-flex align-items-center my-5 mt-lg-6 mb-lg-5">
             <div class="container">
-                <p class="text-center"><a href="#" class="text-gray-700"><i class="fas fa-angle-left me-2"></i> Back to homepage</a></p>
+                <p class="text-center"><a href="#" class="text-gray-700"><i class="fas fa-angle-left me-2"></i> Kembali ke halaman utama</a></p>
                 <div class="row justify-content-center form-bg-image" data-background-lg="{{ asset('mg/illustrations/signin.svg') }}">
                     <div class="col-12 d-flex align-items-center justify-content-center">
                         <div class="mb-4 mb-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                             <div class="text-center text-md-center mb-4 mt-md-0">
-                                <h1 class="mb-0 h3">Create an account</h1>
+                                <h1 class="mb-0 h3">Buat Sebuah Akun</h1>
 						
                             </div>
                             <form action="{{ route('register.process') }}" method="post">
@@ -43,32 +43,34 @@
 							
 						  <!-- Form -->
                                 <div class="form-group mb-4">
-                                    <label >First Name</label>
+                                    <label >Nama Depan</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><span class="fas fa-user"></span></span>
-                                        <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror" placeholder="First Name" value="{{ old('first_name') }}" autofocus>
+                                        <input type="text" name="nama_depan" class="form-control @error('nama_depan') is-invalid @enderror" placeholder="Nama Depan" value="{{ old('nama_depan') }}" autofocus>
                                     </div>
-							<div class="text-danger">
-								@error('first_name')
+							<div class="text-danger mt-1" style="font-size:13px !important;">
+								@error('nama_depan')
 									{{ $message }}
 								@enderror
 							</div>
                                 </div>
                                 <!-- End of Form -->
+
 						  <!-- Form -->
                                 <div class="form-group mb-4">
-                                    <label>Last Name</label>
+                                    <label>Nama Belakang</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><span class="fas fa-user"></span></span>
-                                        <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror" placeholder="Last Name" value="{{ old('last_name') }}">
+                                        <input type="text" name="nama_belakang" class="form-control @error('nama_belakang') is-invalid @enderror" placeholder="Nama Belakang" value="{{ old('nama_belakang') }}">
                                     </div>  
-							<div class="text-danger">
-								@error('last_name')
+							<div class="text-danger mt-1" style="font-size:13px !important;">
+								@error('nama_belakang')
 									{{ $message }}
 								@enderror
 							</div>
                                 </div>
                                 <!-- End of Form -->
+
 						  <!-- Form -->
                                 <div class="form-group mb-4">
                                     <label>Username</label>
@@ -76,69 +78,74 @@
                                         <span class="input-group-text"><span class="fas fa-at"></span></span>
                                         <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="Username" value="{{ old('username') }}">
                                     </div>  
-							<div class="text-danger">
+							<div class="text-danger mt-1" style="font-size:13px !important;">
 								@error('username')
 									{{ $message }}
 								@enderror
 							</div>
                                 </div>
                                 <!-- End of Form -->
+
                                 <!-- Form -->
                                 <div class="form-group mb-4">
-                                    <label>Your Email</label>
+                                    <label>Email</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><span class="fas fa-envelope"></span></span>
-                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="example@company.com" value="{{ old('email') }}">
+                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="contoh@perusahaan.com" value="{{ old('email') }}">
                                     </div>  
-							<div class="text-danger">
+							<div class="text-danger mt-1" style="font-size:13px !important;">
 								@error('email')
 									{{ $message }}
 								@enderror
 							</div>
                                 </div>
                                 <!-- End of Form -->
+
                                 <div class="form-group">
                                     <!-- Form -->
                                     <div class="form-group mb-4">
-                                        <label>Your Password</label>
+                                        <label>Password</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
                                             <input type="password" name="password" placeholder="Password" class="form-control	 @error('password') is-invalid @enderror" value="{{ old('password') }}">
                                         </div> 
-								<div class="text-danger">
+								<div class="text-danger mt-1" style="font-size:13px !important;">
 								@error('password')
 									{{ $message }}
 								@enderror
 							</div>
                                     </div>
                                     <!-- End of Form -->
+
                                     <!-- Form -->
                                     <div class="form-group mb-4">
-                                        <label>Confirm Password</label>
+                                        <label>Konfirmasi Password</label>
                                         <div class="input-group">
                                             <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
-                                            <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control @error('confirm_password') is-invalid @enderror" value="{{ old('confirm_password') }}">
+                                            <input type="password" name="konfirmasi_password" placeholder="Konfirmasi Password" class="form-control @error('konfirmasi_password') is-invalid @enderror" value="{{ old('konfirmasi_password') }}">
                                         </div>  
-								<div class="text-danger">
-								@error('confirm_password')
+								<div class="text-danger mt-1" style="font-size:13px !important;">
+								@error('konfirmasi_password')
 									{{ $message }}
 								@enderror
 							</div>
                                     </div>
                                     <!-- End of Form -->
+
                                     <div class="form-check mb-4">
                                         <input class="form-check-input @error('terms') is-invalid @enderror" type="checkbox" name="terms">
                                         <label class="form-check-label">
-                                            I agree to the <a href="#">terms and conditions</a>
+                                            Saya menyetujui <a href="#">syarat dan ketentuan</a>
                                         </label>
                                     </div>
+
                                 </div>
                                 <div class="d-grid">
-                                    <button type="submit" class="btn btn-dark">Sign in</button>
+                                    <button type="submit" class="btn btn-dark">Buat</button>
                                 </div>
                             </form>
                             <div class="mt-3 mb-4 text-center">
-                                <span class="fw-normal">or</span>
+                                <span class="fw-normal">atau</span>
                             </div>
                             <div class="d-flex justify-content-center my-4">
                                 <a href="#" class="btn btn-icon-only btn-pill btn-outline-gray-400 text-facebook me-2" type="button" aria-label="facebook button" title="facebook button">
@@ -153,8 +160,8 @@
                             </div>
                             <div class="d-flex justify-content-center align-items-center mt-4">
                                 <span class="fw-normal">
-                                    Already have an account?
-                                    <a href="{{ route('app.login') }}" class="fw-bold">Login here</a>
+                                    sudah memiliki akun?
+                                    <a href="{{ route('app.login') }}" class="fw-bold">Masuk disini</a>
                                 </span>
                             </div>
                         </div>
@@ -164,7 +171,7 @@
         </section>
     </main>
 
-    <x-partials._scripts/>
+    <x-partials.scripts/>
     
 </body>
 

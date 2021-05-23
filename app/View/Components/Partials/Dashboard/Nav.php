@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\partials\dashboard;
+namespace App\View\Components\Partials\Dashboard;
 
 use Illuminate\View\Component;
 
-class _topbar extends Component
+class Nav extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class _topbar extends Component
      */
     public function render()
     {
-        return view('components.partials.dashboard._topbar');
+        return view('components.partials.dashboard.nav');
     }
 }

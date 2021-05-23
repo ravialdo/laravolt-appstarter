@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\partials\dashboard;
+namespace App\View\Components\Partials\Dashboard;
 
 use Illuminate\View\Component;
 
-class _nav extends Component
+class Footer extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class _nav extends Component
      */
     public function render()
     {
-        return view('components.partials.dashboard._nav');
+        return view('components.partials.dashboard.footer');
     }
 }

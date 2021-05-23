@@ -1,19 +1,22 @@
 <?php
 
-namespace App\View\Components\partials\dashboard;
+namespace App\View\Components\Breadcrumbs;
 
 use Illuminate\View\Component;
 
-class _footer extends Component
+class BreadcrumbItem extends Component
 {
+    public $route, $text;
+	
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($route, $text)
     {
-        //
+        $this->route = $route;
+	   $this->text = $text;
     }
 
     /**
@@ -23,6 +26,10 @@ class _footer extends Component
      */
     public function render()
     {
-        return view('components.partials.dashboard._footer');
+        return <<<'blade'
+<li class="breadcrumb-item">
+	<a href="{{ $route }}">{{ $text }}</a>
+</li>
+blade;
     }
 }

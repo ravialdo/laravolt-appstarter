@@ -25,14 +25,21 @@
           <span class="sidebar-text">Dashboard</span>
         </a>
       </li>
+
+	<li class="nav-item {{ route('akun-pengguna.index') == url()->current() ? 'active' : '' || Request::is('dashboard/akun-pengguna/*') ? 'active' : '' }}">
+        <a href="{{ route('akun-pengguna.index') }}" class="nav-link">
+          <span class="sidebar-icon"><span class="fas fa-users"></span></span>
+          <span class="sidebar-text">Akun Pengguna</span>
+        </a>
+      </li>
 	
 	<li class="nav-item">
         <span
           class="nav-link #collapsed d-flex justify-content-between align-items-center"
           data-bs-toggle="collapse" data-bs-target="#submenu-app">
           <span>
-            <span class="sidebar-icon"><span class="fas fa-table"></span></span>
-            <span class="sidebar-text">Page Example</span>
+            <span class="sidebar-icon"><span class="fas fa-check"></span></span>
+            <span class="sidebar-text">Example</span>
           </span>
           <span class="link-arrow"><span class="fas fa-chevron-right"></span></span>
         </span>

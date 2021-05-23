@@ -1,19 +1,21 @@
 <?php
 
-namespace App\View\Components\partials\dashboard;
+namespace App\View\Components\Partials;
 
 use Illuminate\View\Component;
 
-class _sidenav extends Component
+class Header extends Component
 {
+	public $title;
+	
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($title)
     {
-        //
+        $this->title = $title;
     }
 
     /**
@@ -23,6 +25,6 @@ class _sidenav extends Component
      */
     public function render()
     {
-        return view('components.partials.dashboard._sidenav');
+        return view('components.partials.header');
     }
 }
