@@ -1,21 +1,19 @@
 <?php
 
-namespace App\View\Components\Breaddcrumb;
+namespace App\View\Components\Tables;
 
 use Illuminate\View\Component;
 
-class BreadcrumbItemActive extends Component
+class Table extends Component
 {
-	public $text;
-	
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($text)
+    public function __construct()
     {
-        $this->text = $text;
+        //
     }
 
     /**
@@ -26,7 +24,18 @@ class BreadcrumbItemActive extends Component
     public function render()
     {
         return <<<'blade'
-<li class="breadcrumb-item active" aria-current="page">{{ $text }}</li>
+<div class="table-responsive py-3">
+	<table class="table table-centered table-nowrap mb-0 rounded">
+		<thead class="thead-light">
+			<tr>
+				{{ $thead }}
+			</tr>
+		</thead>
+		<tbody>
+			{{ $tbody }}
+		</tbody>
+	</table>
+</div>
 blade;
     }
 }

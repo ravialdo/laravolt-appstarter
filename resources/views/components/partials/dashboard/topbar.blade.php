@@ -131,10 +131,10 @@
               </div>
             </a>
             <div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-0">
-                <a class="dropdown-item rounded-top fw-bold" href="#"><span class="far fa-user-circle"></span>My Profile</a>
-                <a class="dropdown-item fw-bold" href="#"><span class="fas fa-cog"></span>Settings</a>
-                <a class="dropdown-item fw-bold" href="#"><span class="fas fa-envelope-open-text"></span>Messages</a>
-                <a class="dropdown-item fw-bold" href="#"><span class="fas fa-user-shield"></span>Support</a>
+                <a class="dropdown-item rounded-top fw-bold" href="#"><span class="fas fa-user-circle"></span>Profil Saya</a>
+                <a class="dropdown-item fw-bold" href="#"><span class="fas fa-cog"></span>Pengaturan</a>
+                <a class="dropdown-item fw-bold" href="#"><span class="fas fa-envelope-open-text"></span>Pesan</a>
+                <a class="dropdown-item fw-bold" href="#"><span class="fas fa-user-shield"></span>Dukungan</a>
                 <div role="separator" class="dropdown-divider my-0"></div>
                 <a class="dropdown-item rounded-bottom fw-bold" href="{{ route('app.logout') }}"><span class="fas fa-sign-out-alt text-danger"></span>Logout</a>
             </div>

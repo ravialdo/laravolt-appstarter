@@ -1,22 +1,19 @@
 <?php
 
-namespace App\View\Components\Breaddcrumb;
+namespace App\View\Components\Forms;
 
 use Illuminate\View\Component;
 
-class BreadcrumbItem extends Component
+class InputIconRight extends Component
 {
-	public $route, $text;
-	
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($route, $text)
+    public function __construct()
     {
-        $this->route = $route;
-	   $tjhis->text = $text;
+        //
     }
 
     /**
@@ -27,9 +24,9 @@ class BreadcrumbItem extends Component
     public function render()
     {
         return <<<'blade'
-<li class="breadcrumb-item">
-	<a href="{{ $route }}">{{ $text }}</a>
-</li>
+<div>
+    <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
+</div>
 blade;
     }
 }

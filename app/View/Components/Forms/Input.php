@@ -1,21 +1,19 @@
 <?php
 
-namespace App\View\Components\Breaddcrumb;
+namespace App\View\Components\Forms;
 
 use Illuminate\View\Component;
 
-class Breadcrumb extends Component
+class Input extends Component
 {
-	public $breadcrumb;
-	
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($breadcrumb)
+    public function __construct()
     {
-        $this->breadcrumb = $breadcrumb;
+        //
     }
 
     /**
@@ -26,10 +24,8 @@ class Breadcrumb extends Component
     public function render()
     {
         return <<<'blade'
-<nav aria-label="breadcrumb">
-	<ol class="breadcrumb breadcrumb-text-light breadcrumb-{{ $breadcrumb }} text-white">
-		{{ $slot }}
-	</ol>
+<div>
+    <!-- Life is available only in the present moment. - Thich Nhat Hanh -->
 </div>
 blade;
     }

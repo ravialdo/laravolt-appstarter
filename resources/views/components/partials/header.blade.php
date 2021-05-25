@@ -36,3 +36,13 @@
 
 <!-- Volt CSS -->
 <link type="text/css" href="https://demo.themesberg.com/volt/css/volt.css" rel="stylesheet">
+
+<!-- Font Google -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+
+<style>
+body {
+ 	font-family: 'Work Sans', sans-serif;
+}
+</style>

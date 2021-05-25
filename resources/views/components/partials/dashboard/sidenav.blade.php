@@ -7,7 +7,7 @@
             alt="Bonnie Green">
         </div>
         <div class="d-block">
-          <h2 class="h6 text-capitalize">Hii, {{ auth()->user()->username }}</h2>
+          <h2 class="h6 text-capitalize">Hi, {{ auth()->user()->username }}</h2>
           <a href="{{ route('app.logout') }}" class="btn btn-secondary text-dark btn-xs"><span
               class="me-2"><span class="fas fa-sign-out-alt"></span></span>Sign Out</a>
         </div>
@@ -28,7 +28,7 @@
 
 	<li class="nav-item {{ route('akun-pengguna.index') == url()->current() ? 'active' : '' || Request::is('dashboard/akun-pengguna/*') ? 'active' : '' }}">
         <a href="{{ route('akun-pengguna.index') }}" class="nav-link">
-          <span class="sidebar-icon"><span class="fas fa-users"></span></span>
+          <span class="sidebar-icon"><span class="fas fa-user-friends"></span></span>
           <span class="sidebar-text">Akun Pengguna</span>
         </a>
       </li>
