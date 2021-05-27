@@ -124,7 +124,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <div class="media d-flex align-items-center">
-                <img class="user-avatar md-avatar rounded-circle" alt="Image placeholder" src="{{ asset('img/team/profile-picture-3.jpg') }}">
+			{!! Avatar::create(Auth::user()->full_name)->setBackground('#ebf4ff')->setForeground('#6374ea')->setDimension(30)->setFontSize(15)->toSvg() !!}
                 <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                   <span class="mb-0 font-small fw-bold">Bonnie Green</span>
                 </div>

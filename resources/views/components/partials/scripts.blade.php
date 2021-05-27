@@ -25,14 +25,14 @@
 <!-- Vanilla JS Datepicker -->
 <script src="https://demo.themesberg.com/volt/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
 
-<!-- Notyf -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <!-- Simplebar -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simplebar/5.3.2/simplebar.min.js" integrity="sha512-t5ONTEmbf892tq6YhM2eSBdDALGVbnQgqSy5fez2Dki/raOHJxKuf1DWSyHs8qvXoNDg2aJ9RdukRj0lRspfAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- Github buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Sweetalert -->
+<script src="{{ asset('vendor/sweetalert/sweetalert.all.js') }}"></script>
 
 <!-- Volt JS -->
 <script src="{{ asset('js/volt.js') }}"></script>

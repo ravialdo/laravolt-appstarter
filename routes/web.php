@@ -34,6 +34,8 @@ Route::middleware(['auth'])->group(function (){
 	Route::prefix('dashboard')->group(function (){
 		Route::get('/', [Dashboard\Index::class, 'index'])->name('dashboard.index');
 		Route::resource('/akun-pengguna', Admin\AkunPenggunaController::class);
+
+		
 	});
 	
 });

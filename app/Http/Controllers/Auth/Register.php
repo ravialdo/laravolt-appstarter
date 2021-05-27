@@ -18,9 +18,9 @@ class Register extends Controller
 
 	public function register(RegisterRequest $request)
 	{
-		User::create([
-			'nama_depan' => $request->first_name,
-			'nama_belakang' => $request->last_name,
+		 User::create([
+			'first_name' => $request->nama_depan,
+			'last_name' => $request->nama_belakang,
 			'email' => $request->email,
 			'username' => $request->username,
 			'password' => Hash::make($request->password),

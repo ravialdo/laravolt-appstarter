@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\AkunPenggunaRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Datatables;
+use Hash;
 
 class AkunPenggunaController extends Controller
 {
@@ -38,9 +41,19 @@ class AkunPenggunaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AkunPenggunaRequest $request)
     {
-        //
+        User::create([
+			'first_name' => $request->nama_depan,
+			'last_name' => $request->nama_belakang,
+			'email' => $request->email,
+			'username' => $request->username,
+			'password' => Hash::make($request->password),
+			'role' => $request->hak_akses
+		]);
+		
+		toast('Akun berhasil disimpan!', 'success');
+		return redirect()->back();
     }
 
     /**
@@ -62,7 +75,11 @@ class AkunPenggunaController extends Controller
      */
     public function edit($id)
     {
-        //
+	   $data = [
+			'user' => User::find($id)->first()
+	   ];
+	
+        return view('admin.akun-pengguna.edit', $data);
     }
 
     /**
@@ -72,9 +89,24 @@ class AkunPenggunaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AkunPenggunaRequest $request, $id)
     {
-        //
+        User::find($id)->update([
+			'first_name' => $request->nama_depan,
+			'last_name' => $request->nama_belakang,
+			'email' => $request->email,
+			'username' => $request->username,
+			'role' => $request->hak_akses
+		]);
+		
+		if($request->password){
+			User::find($id)->update([
+				'password' => Hash::make($request->password),
+			]);
+		}
+		
+		toast('Akun berhasil di edit!', 'success');
+		return redirect()->back();
     }
 
     /**
@@ -85,6 +117,8 @@ class AkunPenggunaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+	   toast('Akun berhasil dihapus!', 'success');
+	   return redirect()->back();
     }
 }

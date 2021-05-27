@@ -3,8 +3,7 @@
     <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
       <div class="d-flex align-items-center">
         <div class="user-avatar lg-avatar me-4">
-          <img src="{{ asset('img/team/profile-picture-3.jpg') }}" class="card-img-top rounded-circle border-white"
-            alt="Bonnie Green">
+          {!! Avatar::create(Auth::user()->full_name)->setBackground('#ebf4ff')->setForeground('#6374ea')->setDimension(30)->setFontSize(15)->toSvg() !!}
         </div>
         <div class="d-block">
           <h2 class="h6 text-capitalize">Hi, {{ auth()->user()->username }}</h2>
